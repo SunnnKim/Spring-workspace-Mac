@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+.content-box .top-content{ }
+.content-box .top-content p {color:#fff; font-family: 'Bree Serif'; font-size: 40px; text-align: center; 
+display: inline-block; position: relative;left: 420px; top: 50px; border-bottom: 5px solid; }
+
+/* depth2 */
+
+.content-box .depth2{width: 100%; height: 50px; position: relative; left: 440px; top: 85px;}
+.content-box .depth2 ul{display: inline-block; width:100%; height: 100%;}
+.content-box .depth2 ul li{ color: #fff; margin-right: 10px; float:left;}
+.on{ font-weight: 600; color:#fff;}
+
+/* 영화표지 */
+.content-box .movies{ height: 600px; position: relative; top: 100px;}
+.content-box .movies .img{width: 230px; float: left; margin: 0 15px;}
+.content-box .movies .img img:hover{ background: #000; opacity: 0.3;}
+.content-box .movies .img img{ width:100%;  margin-bottom: 30px; }
+.content-box .movies .img .heart{ width:45%;height: 50px; line-height:50px; float: left; border: 1px solid #fff; text-align:center;
+border-radius: 4px;}
+.content-box .movies .img .heart .fa-heart{ color: #fff;}
+
+.content-box .movies .img .reserve-btn { width:45%; height:50px; float: right; transition:all 0.9s, color 0.3s; background: #037b94;color: #fff;
+border-radius: 4px; line-height: 50px; text-align: center;}
+.content-box .movies .img .reserve-btn:hover {color: #fff;}
+.hover1:hover{box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;}
+
+.schedule-box { height: 500px; background: #fff;}
+.schedule-box .top-content{ margin: 0 200px;}
+
+.schedule-box .top-content p {color:#000; font-family: 'Bree Serif'; font-size: 40px; text-align: center; 
+display: inline-block; position: relative;left: 420px; top: 50px; border-bottom: 5px solid; }
+
+.schedule-box .search { width:400px; height: 50px; border: 5px solid; position: relative; left: 300px; top: 170px; }
+.schedule-box .search input { border: none; width: 90%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;
+margin-left: 10px; margin-top: 7px;}
+.schedule-box .search input:focus { outline: none;}
+.schedule-box a{color:#000;}
+.schedule-box a:hover{color:#037b94;}
+.schedule-box .search a .fa-search { font-size: 21px; position: relative; top: 8px; left: -7px; }
+
+.schedule-box .btm-line{ width: 230px; height: 10px; position: relative; top: 230px; left: 380px; display: inline-block;
+ border-top: 9px solid #000; text-align: center; font-size: 19px; padding-top: 20px; transition:all 0.2s ease-in-out;}
+
+
+.schedule-box .sch-icon { position: relative; left: 910px; top: 40px; display: inline-block; }
+.schedule-box .sch-icon .far { font-size: 80px; }
+.schedule-box .btm-line2{ width: 230px; height: 10px; position: relative; top: 160px; left: 760px; display: inline-block; 
+ border-top: 9px solid #000; text-align: center; font-size: 19px; padding-top: 20px; transition:all 0.2s ease-in-out;}
+
+
+.lastcontent-box{ min-height: 500px; }
