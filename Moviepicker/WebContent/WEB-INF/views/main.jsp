@@ -95,9 +95,13 @@
 			</div>
 		</div>
 		
-		
 	</div>
 
+	<div class="more-btn hover2">
+		<i class="fas fa-search-plus"></i>
+		<span>더 많은 영화보기</span>
+	</div>
+	
 </div><!-- content-box  -->
 
 <!-- Schedule-box -->

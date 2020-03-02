@@ -6,7 +6,7 @@ display: inline-block; position: relative;left: 420px; top: 50px; border-bottom:
 
 /* depth2 */
 
-.content-box .depth2{width: 100%; height: 50px; position: relative; left: 440px; top: 85px;}
+.content-box .depth2{ height: 50px; position: relative; left: 440px; top: 85px; display: inline-block;}
 .content-box .depth2 ul{display: inline-block; width:100%; height: 100%;}
 .content-box .depth2 ul li{ color: #fff; margin-right: 10px; float:left;}
 .on{ font-weight: 600; color:#fff;}
@@ -18,13 +18,21 @@ display: inline-block; position: relative;left: 420px; top: 50px; border-bottom:
 .content-box .movies .img img{ width:100%;  margin-bottom: 30px; }
 .content-box .movies .img .heart{ width:45%;height: 50px; line-height:50px; float: left; border: 1px solid #fff; text-align:center;
 border-radius: 4px;}
+/* buttons */
 .content-box .movies .img .heart .fa-heart{ color: #fff;}
-
 .content-box .movies .img .reserve-btn { width:45%; height:50px; float: right; transition:all 0.9s, color 0.3s; background: #037b94;color: #fff;
 border-radius: 4px; line-height: 50px; text-align: center;}
 .content-box .movies .img .reserve-btn:hover {color: #fff;}
 .hover1:hover{box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;}
 
+/* 더 많은 영화보기 */
+.content-box .more-btn{ width:250px; height:80px; line-height:80px; text-align:center; color:#fff; font-size: 20px; left:420px;
+border: 1px solid #fff; margin: 30px 0; margin-bottom:100px; position: relative; transition: all 0.9s, color 0.2s; border-radius: 2px; cursor:pointer;}
+.content-box .more-btn:hover{ border: 1px solid #037b94; }
+.hover2:hover{box-shadow:250px 0 0 0 #037b94 inset;}
+
+
+/* 예매하기  */
 .schedule-box { height: 500px; background: #fff;}
 .schedule-box .top-content{ margin: 0 200px;}
 
