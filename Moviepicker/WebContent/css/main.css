@@ -18,8 +18,12 @@ display: inline-block; position: relative;left: 420px; top: 50px; border-bottom:
 .content-box .movies .img img{ width:100%;  margin-bottom: 30px; }
 .content-box .movies .img .heart{ width:45%;height: 50px; line-height:50px; float: left; border: 1px solid #fff; text-align:center;
 border-radius: 4px;}
+/* Movie Info */
+.content-box .movies .info{ width: 100%; height: 50px; color:#fff;}
+.content-box .movies .info span{ color:#fff; font-size: 12px; display: block;}
+
 /* buttons */
-.content-box .movies .img .heart .fa-heart{ color: #fff;}
+.content-box .movies .img .heart{ color: #fff;}
 .content-box .movies .img .reserve-btn { width:45%; height:50px; float: right; transition:all 0.9s, color 0.3s; background: #037b94;color: #fff;
 border-radius: 4px; line-height: 50px; text-align: center;}
 .content-box .movies .img .reserve-btn:hover {color: #fff;}

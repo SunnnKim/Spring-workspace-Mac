@@ -7,7 +7,4 @@
   
 <mapper namespace="Member">
 <!-- test용 쿼리문 -->
-<!-- <select id="allMember" resultType="bit.com.a.model.MemberDto">
-	SELECT * FROM MEMBER
-</select>  -->
 </mapper>

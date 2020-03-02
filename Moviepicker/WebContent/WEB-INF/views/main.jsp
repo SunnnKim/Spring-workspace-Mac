@@ -1,5 +1,14 @@
+<%@page import="mpicker.com.a.model.MovieDto"%>
+<%@page import="java.util.List"%>
+<%@page import="mpicker.com.a.movie.MovieManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%
+
+ List<MovieDto> list = MovieManager.getMaindata();
+System.out.println("size:" +list.size());
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -50,50 +59,48 @@
 	<div class="depth2">
 		<ul>
 			<li><a href="#" class="on">예매율순</a></li>
-			<li><a href="#">관람객순</a></li>
-			<li><a href="#">평점순</a></li>
+			<li><a href="#">현재상영작</a></li>
+			<li><a href="#">개봉예정작</a></li>
 		</ul>
 	</div>
 	<div class="movies">
-		<div class="img">
-			<img alt="영화표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg">
-			<div class="heart">
-				<i class="far fa-heart"> 123</i>
-			</div>
-			<div class="reserve-btn hover1">
-				예매하기
-			</div>
-		</div>
+	
+	<%
+	if(list.size()>0){
+		for(int i=0; i<list.size();i++){
+			MovieDto dto = list.get(i);
+			%>
+				<div class="img">
+					<a href="<%=dto.getUrl()%>">
+						<img alt="영화 표지" src="<%=dto.getImgSrc()%>">
+<!-- 						<img alt="영화 표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg"> -->
+					</a>
+					<div class="info">
+						<strong><%= dto.getTitle() %></strong>
+						<span>
+							 <%= dto.getResereRate()%>
+						</span>
+					</div>
+					<div class="heart">
+						<!-- <i class="far fa-heart"> -->
+						
+						 <!-- </i> -->
+					</div>
+					
+					<div class="reserve-btn hover1">
+						예매하기
+					</div>
+				</div>
 		
-		<div class="img">
-			<img alt="영화표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg">
-			<div class="heart">
-				<i class="far fa-heart"> 123</i>
-			</div>
-			<div class="reserve-btn hover1">
-				예매하기
-			</div>
-		</div>
-		
-		<div class="img">
-			<img alt="영화표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg">
-			<div class="heart">
-				<i class="far fa-heart"> 123</i>
-			</div>
-			<div class="reserve-btn hover1">
-				예매하기
-			</div>
-		</div>
-		
-		<div class="img">
-			<img alt="영화표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg">
-			<div class="heart">
-				<i class="far fa-heart"> 123</i>
-			</div>
-			<div class="reserve-btn hover1">
-				예매하기
-			</div>
-		</div>
+			<%
+		}
+	}else{
+	%>
+	
+	
+	<%
+	}	
+	%>
 		
 	</div>
 
