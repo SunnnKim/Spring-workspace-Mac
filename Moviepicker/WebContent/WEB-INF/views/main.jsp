@@ -6,8 +6,8 @@
 
 <%
 
- List<MovieDto> list = MovieManager.getMaindata();
-System.out.println("size:" +list.size());
+List<MovieDto> list = (List<MovieDto>) request.getAttribute("list");
+String choice = request.getParameter("choice");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -21,6 +21,7 @@ System.out.println("size:" +list.size());
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a9726fbbf3.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <body>
@@ -58,9 +59,8 @@ System.out.println("size:" +list.size());
 	</div>
 	<div class="depth2">
 		<ul>
-			<li><a href="#" class="on">예매율순</a></li>
-			<li><a href="#">현재상영작</a></li>
-			<li><a href="#">개봉예정작</a></li>
+			<li><a href="main.do?choice=now" id="now">현재개봉작</a></li>
+			<li><a href="main.do?choice=scheduled" id="scheduled" >개봉예정작</a></li>
 		</ul>
 	</div>
 	<div class="movies">
@@ -73,7 +73,6 @@ System.out.println("size:" +list.size());
 				<div class="img">
 					<a href="<%=dto.getUrl()%>">
 						<img alt="영화 표지" src="<%=dto.getImgSrc()%>">
-<!-- 						<img alt="영화 표지" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83126/83126_320.jpg"> -->
 					</a>
 					<div class="info">
 						<strong><%= dto.getTitle() %></strong>
@@ -175,6 +174,16 @@ System.out.println("size:" +list.size());
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+var choice = "<%=choice%>";
+if(choice==="now"){
+	$("#now").addClass("on");
+}else{
+	$("#scheduled").addClass("on");
+	
+}
+</script>
 
 </body>
 </html>

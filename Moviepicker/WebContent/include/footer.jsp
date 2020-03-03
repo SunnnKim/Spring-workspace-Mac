@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 
-</div><!-- content-box  -->
 <div class="footer">
     <div class="inner">
         <ul>

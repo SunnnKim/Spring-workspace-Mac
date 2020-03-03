@@ -34,5 +34,5 @@ body{box-sizing: border-box; margin: 0 auto;}
 
 
 .content-box{
-	min-height: 500px; width:1040px; margin:0 200px;
+	min-height: 500px; width:1040px; margin:0 200px; margin-bottom:100px;
 }

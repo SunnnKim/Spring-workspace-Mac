@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{ background: #fff; }
+.location{ border: 1px solid}
+.content-box{border: 1px solid red;}
+.content-box .detail-img {border: 1px solid blue;}
+.content-box .detail-img img{ }
+
+.content-box .detail-info{border: 1px solid brown;}
+.content-box .detail-info .title { }
+.content-box .detail-info ul {border: 1px solid brown;}
+.content-box .detail-info ul li {float: left;}
+.content-box .detail-info .viewers { }
+.content-box .detail-info .reserve-btn{ border: 1px solid yellow;}
+
+
+

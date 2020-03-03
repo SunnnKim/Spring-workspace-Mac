@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<a href="mainview.do">mainview.do</a>
-
+<!-- 
+<a href="main.do?choice=now">main.do</a>
+ -->
+<a href="movielist.do">main.do</a>
 
 </body>
 </html>

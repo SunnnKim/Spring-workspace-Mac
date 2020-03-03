@@ -13,12 +13,12 @@ import mpicker.com.a.model.MovieDto;
 
 public class MovieManager {
 
-	public static List<MovieDto> getMaindata(){
+	public static List<MovieDto> getMaindata(String url){
 		
 		Document doc; 	//jsoup 소속의 Document
 		
 		List<MovieDto> list = new ArrayList<MovieDto>();
-		String url = "https://movie.daum.net/premovie/released"; //크롤링할 url지정
+	//	String url = "https://movie.daum.net/premovie/released"; //크롤링할 url지정
 		
 		try {
 			doc = Jsoup.connect(url).get();

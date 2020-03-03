@@ -1,0 +1,44 @@
+/* 여기부터 */
+
+body { background: #fff; }
+.location{padding-left:200px;}
+.content-box{ box-sizing: border-box; }
+.movielist-box{ position: relative;/*  border: 1px solid green; */ margin-bottom: 200px;}
+/* Boxoffice Title */
+.movielist-box > span{ display: block; position:relative; margin:40px auto; text-align: center;
+    border-bottom: 5px solid; width: 200px; font-size: 30px;}
+
+/* 상영구분 */
+.movie-sorting { font-size: 20px; margin-bottom: 10px; text-align: center; color:#000;/*  border: 1px solid pink; */
+font-size: 20px; padding: 20px; text-align: center; line-height: 30px; }
+.movie-sorting ul { list-style: none; line-height: 50px; padding: 0;}
+.movie-sorting ul li { display: inline-block; width: 150px; border: 1px solid #037b94; margin-right: 20px; color:#037b94;
+	transition: all 0.3s ease-in-out;  cursor: pointer; }
+.movie-sorting ul li:first{border-right:none;}
+.movie-sorting ul li:hover { border: 1px solid #037b94; background:  #037b94; color: #fff;}
+.movie-sorting ul li a { display: inline-block; width: 100%;  color:#037b94; }
+.movie-sorting ul li a:hover { color:#fff;  }
+.movie-sorting ul li a.on{ border: 1px solid #037b94; background:#037b94; color: #fff;}
+
+/* 영화 콘텐츠 */
+.movielist-box .movie-content{ width:240px; margin: 50px 0; margin-right: 22px;/*  border: 1px solid red; */ display: inline-block; }
+.movielist-box .movie-content:nth-child(4n+2){ margin-right: 0;}
+.movielist-box .movie-content .title-img { width: 235px; margin: 0 auto; }
+.movielist-box .movie-content a{ display: inline-block; width: 100%; height: 100%;}
+/* 이미지 호버시 이벤트 */
+.movielist-box .movie-content .img-cover{ position: absolute; width: 235px; height: 343px;
+    display: none; color: #fff; font-size: 20px; }
+.hover1{ transition: all 0.2s ease-in-out; }
+.hover1:hover{ background: rgba(3, 3, 3, 0.3); }
+.movielist-box .movie-content a:hover .img-cover { display: block; border: 1px solid #aaaaaa;}
+.movielist-box .movie-content a img{ width: 100%; }
+.movielist-box .movie-content .movielist-title { font-size: 18px; font-weight: 600; }
+.movielist-box .movie-content .movie-stars{ font-size: 20px; font-weight: 600; color: #037b94;
+    width: 47%; height: 50px; line-height: 50px; text-align: center;display:inline-block; 
+    border: 1px solid #037b94; margin: 10px 0; margin-right:10px; border-radius: 4px;} 
+.movielist-box .movie-content .reserve-btn{ font-size: 18px; color:#fff;
+    width: 47%; height: 50px; line-height: 50px; text-align: center;display:inline-block; 
+    border: 1px solid #037b94; background: #037b94; margin: 10px 0; border-radius: 4px;} 
+.movielist-box .movie-content .reserve-btn a{transition: all 0.2s ease-in-out; }
+.movielist-box .movie-content .reserve-btn a:hover{ background: #fff; color:#037b94; }
+.fa-star{ color: #037b94;}
