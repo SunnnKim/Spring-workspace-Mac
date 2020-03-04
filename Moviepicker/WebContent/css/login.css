@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+body {
+    margin: 0 auto;
+    background-color: #333;
+}
+div{
+    box-sizing: border-box;
+    margin: auto;
+}
+#login-page {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#login-container {
+    background-color: #eaeaea;
+    top: 200px;
+    width: 400px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 10% 20% 50% 20%;
+    margin-top: 30px;
+}
+#login-container > div {
+    /* border: 1px solid yellowgreen; */
+    width: 100%;
+    height: 100%;
+}
+.inputs {
+    display: block;
+    width: 250px;
+    height: 40px;
+    padding: 3px 30px 3px 30px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 40px;
+    background-color: #555;
+    color: #bbb;
+    font-size: 17px;
+}
+.inputs:focus,
+.buttons:focus {
+    outline: none;
+}
+.buttons {
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #333;
+    color: #bbb;
+    transition: .1s;
+}
+#submit-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#submit-button:hover {
+    background-color: #037b94;
+}
+.messages {
+    padding-left: 60px;
+}
+.warn {
+    color: crimson;
+}
+.correct {
+    color: yellowgreen;
+}
+#extra-wrapper {
+    text-align: center;
+}
+.aTag {
+    text-decoration: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 13px;
+}
+.aTag:visited {
+    text-decoration: none;
+    color: #777;
+}
+#signup-button {
+    display: inline-block;
+    margin-top: 15px;
+    transition: .1s;
+}
+#signup-button:hover {
+    color: #037b94;
+    text-decoration-line: underline;
+}
+#login-footer-box {
+    text-align: center;
+}

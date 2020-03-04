@@ -61,4 +61,29 @@ public class MemberController {
 	}
 	
 	
+	@RequestMapping(value="reserve.do",method= {RequestMethod.GET,RequestMethod.POST})
+	public String reserve(){
+		
+		logger.info("MemberController reserve.do " + new Date());
+		
+		return "reserve";
+	}
+	
+	@RequestMapping(value="login.do",method= {RequestMethod.GET,RequestMethod.POST})
+	public String login(){
+		
+		logger.info("MemberController login.do " + new Date());
+		
+		return "login";
+	}
+	
+	@RequestMapping(value="join.do",method= {RequestMethod.GET,RequestMethod.POST})
+	public String join(){
+		
+		logger.info("MemberController join.do " + new Date());
+		
+		return "join";
+	}
+	
+	
 }

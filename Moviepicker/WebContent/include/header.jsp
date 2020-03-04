@@ -16,8 +16,8 @@
 <body>
 <div class="header-box">
     <div class="user-option">
-        <a href="#"><span>JOIN</span></a>
-        <a href="#"><span>LOGIN</span></a>
+        <a href="join.do"><span>JOIN</span></a>
+        <a href="login.do"><span>LOGIN</span></a>
     </div>
     <div class="gnb">
         <ul>
@@ -26,8 +26,8 @@
 	                <i class="fas fa-bars"></i>
  				</a>
             </li>
-            <li><a href="#">Box Office</a></li>
-            <li><a href="#">Tickets</a></li>
+            <li><a href="movielist.do">Box Office</a></li>
+            <li><a href="reserve.do">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
             <li><a href="#">Comments</a></li>
             <li>
@@ -38,7 +38,7 @@
         </ul>
     </div>
     <div class="img">
-        <img src="${pageContext.request.contextPath}/images/logo.png">
+        <img src="${pageContext.request.contextPath}/images/logo.png" onclick="location.href='main.do?choice=now'">
     </div> 
 </div>
 

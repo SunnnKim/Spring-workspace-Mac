@@ -27,8 +27,8 @@ String choice = request.getParameter("choice");
 <body>
 <div class="header-box">
     <div class="user-option">
-        <a href="#"><span>JOIN</span></a>
-        <a href="#"><span>LOGIN</span></a>
+        <a href="join.do"><span>JOIN</span></a>
+        <a href="login.do"><span>LOGIN</span></a>
     </div>
     <div class="gnb">
         <ul>
@@ -37,8 +37,8 @@ String choice = request.getParameter("choice");
 	                <i class="fas fa-bars"></i>
  				</a>
             </li>
-            <li><a href="#">Box Office</a></li>
-            <li><a href="#">Tickets</a></li>
+            <li><a href="movielist.do">Box Office</a></li>
+            <li><a href="reserve.do">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
             <li><a href="#">Comments</a></li>
             <li>
@@ -49,7 +49,7 @@ String choice = request.getParameter("choice");
         </ul>
     </div>
     <div class="img">
-        <img src="${pageContext.request.contextPath}/images/logo.png">
+        <img src="${pageContext.request.contextPath}/images/logo.png" onclick="location.href='main.do?choice=now'">
     </div> 
 </div>
 
@@ -81,9 +81,7 @@ String choice = request.getParameter("choice");
 						</span>
 					</div>
 					<div class="heart">
-						<!-- <i class="far fa-heart"> -->
-						
-						 <!-- </i> -->
+						영화 정보
 					</div>
 					
 					<div class="reserve-btn hover1">
@@ -103,7 +101,7 @@ String choice = request.getParameter("choice");
 		
 	</div>
 
-	<div class="more-btn hover2">
+	<div class="more-btn hover2" onclick="location.href='movielist.do'">
 		<i class="fas fa-search-plus"></i>
 		<span>더 많은 영화보기</span>
 	</div>
