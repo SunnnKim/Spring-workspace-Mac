@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import mpicker.com.a.dao.ReserveDto;
 import mpicker.com.a.model.MemberDto;
 import mpicker.com.a.model.MovieDto;
 import mpicker.com.a.movie.MovieManager;
@@ -83,6 +84,16 @@ public class MemberController {
 		logger.info("MemberController join.do " + new Date());
 		
 		return "join";
+	}
+	//	payment page
+	@RequestMapping(value="beforepay.do",method= {RequestMethod.GET,RequestMethod.POST})
+	public String beforePay(ReserveDto dto, Model model){
+		
+		logger.info("MemberController beforepay.do " + new Date());
+		logger.info("dto:" + dto.toString());
+		
+		model.addAttribute("dto",dto);
+		return "beforepay";
 	}
 	
 	

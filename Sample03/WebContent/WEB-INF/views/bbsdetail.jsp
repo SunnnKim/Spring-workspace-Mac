@@ -1,3 +1,4 @@
+<%@page import="bit.com.a.model.BbsDto"%>
 <%@page import="mpicker.com.a.model.BbsDto"%>
 <%@page import="mpicker.com.a.model.MemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

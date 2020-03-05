@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.select-seat {border: 1px solid; width: 500px; height: 450px; padding:10px;}
+.screen{ height: 50px; margin: 10px; text-align: center; line-height: 50px; }
+.seats{ border: 1px solid #eaeaea; margin-bottom: 15px;
+display: flex; justify-content: space-around; }
+.seats .right { margin:0 auto; position:relative; width: 20%; height: 280px;border: 1px solid #eaeaea; margin:10px; padding-left:3px; }
+.seats .center { position:relative; width: 40%; height: 280px;border: 1px solid #eaeaea; margin:10px; padding-left:3px; }
+.seats .left { position:relative; width: 20%; height: 280px;border: 1px solid #eaeaea; margin:10px; padding-left:3px; }
+.seats .right > div { border: 1px solid #333; width: 15px; height: 15px; float: left; margin: 5px 1px; }
+.seats .left > div {border: 1px solid #333; width: 15px; height: 15px; float: left; margin: 5px 1px; }
+.seats .center > div {border: 1px solid #333; width: 15px; height: 15px; float: left; margin: 5px 1px; }
+.seats > div > div:hover{ background: red;}
+.seats > div > div:{ background: black;}
+.btn{ width: 100px; height: 50px; line-height: 50px; text-align: center; 
+	border: 1px solid; margin: 10px auto; }

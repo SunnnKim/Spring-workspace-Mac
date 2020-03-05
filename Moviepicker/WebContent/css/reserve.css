@@ -14,6 +14,11 @@
 .content-box .select-box1 .select-movie{  height: 400px; overflow-y: scroll;  border: 1px solid #eaeaea;}
 .content-box .select-box1 .select-movie > div{ border-top: 1px solid #eaeaea; padding: 20px 10px;  }
 
+/* 지역 선택 */
+.content-box .select-box2-1 { float:left; width: 200px; height: 500px; }
+.content-box .select-box2-1 .select-theater-1{  height: 400px; overflow-y: scroll; border: 1px solid #eaeaea;}
+.content-box .select-box2-1 .select-theater-1 > div{ border-top: 1px solid #eaeaea; padding: 20px 10px;  }
+/* 극장 선택 */
 .content-box .select-box2 { float:left; width: 200px; height: 500px; }
 .content-box .select-box2 .select-theater{  height: 400px; overflow-y: scroll; border: 1px solid #eaeaea;}
 .content-box .select-box2 .select-theater > div{ border-top: 1px solid #eaeaea; padding: 20px 10px;  }
@@ -26,6 +31,7 @@
 .content-box .select-box3 #year { padding: 5px 10px;margin-left:5px; font-size: 18px; font-weight: 600; text-align: center; }
 .content-box .select-box3 #month { padding: 8px 10px;margin-left:5px; font-size: 18px; font-weight: 600; text-align: center; }
 .content-box .select-box3 #month-val { width: 50px;}
+.content-box .select-box3 .dates { text-align: center;}
 
 /* 시간 선택  */
 .content-box .select-box4 { float:left; width: 150px;}
