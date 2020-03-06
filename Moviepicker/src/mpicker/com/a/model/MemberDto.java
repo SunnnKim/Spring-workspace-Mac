@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 public class MemberDto implements Serializable {
 	// 회원정보 클래스
-	private String id;
+	private String email;
 	private String pwd;
 	private String name;
-	private String email;
 	private int auth;	// 사용자는 3, 관리자 1
 	
 	public MemberDto() {
@@ -15,21 +14,20 @@ public class MemberDto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDto(String id, String pwd, String name, String email, int auth) {
+	public MemberDto(String email, String pwd, String name, int auth) {
 		super();
-		this.id = id;
+		this.email = email;
 		this.pwd = pwd;
 		this.name = name;
-		this.email = email;
 		this.auth = auth;
 	}
 
-	public String getId() {
-		return id;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPwd() {
@@ -48,13 +46,7 @@ public class MemberDto implements Serializable {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 	public int getAuth() {
 		return auth;
@@ -66,8 +58,9 @@ public class MemberDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "MemberDto [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", auth=" + auth + "]";
+		return "MemberDto [email=" + email + ", pwd=" + pwd + ", name=" + name + ", auth=" + auth + "]";
 	}
+
 	
 	
 	

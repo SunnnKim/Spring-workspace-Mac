@@ -26,7 +26,7 @@
 	                <i class="fas fa-bars"></i>
  				</a>
             </li>
-            <li><a href="movielist.do">Box Office</a></li>
+            <li><a href="movielist.do?choice=now">Box Office</a></li>
             <li><a href="reserve.do">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
             <li><a href="#">Comments</a></li>

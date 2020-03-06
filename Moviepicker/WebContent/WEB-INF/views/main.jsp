@@ -37,7 +37,7 @@ String choice = request.getParameter("choice");
 	                <i class="fas fa-bars"></i>
  				</a>
             </li>
-            <li><a href="movielist.do">Box Office</a></li>
+            <li><a href="movielist.do?choice=now">Box Office</a></li>
             <li><a href="reserve.do">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
             <li><a href="#">Comments</a></li>
@@ -71,8 +71,13 @@ String choice = request.getParameter("choice");
 			MovieDto dto = list.get(i);
 			%>
 				<div class="img">
-					<a href="<%=dto.getUrl()%>">
+					<a href="moviedetail.do?movieid=<%=dto.getUrl()%>">
 						<img alt="영화 표지" src="<%=dto.getImgSrc()%>">
+						<div class="about-movie">
+							<div>
+								<%=dto.getAboutMovie() %>
+							</div>
+						</div>
 					</a>
 					<div class="info">
 						<strong><%= dto.getTitle() %></strong>
@@ -81,12 +86,29 @@ String choice = request.getParameter("choice");
 						</span>
 					</div>
 					<div class="heart">
-						영화 정보
+						<i class="fas fa-star"></i>
+						<%=dto.getStarrate()%>
 					</div>
-					
-					<div class="reserve-btn hover1">
-						예매하기
-					</div>
+				<%
+					if(dto.getResereRate().contains("예매율")){
+						%>
+						<div class="reserve-btn hover1">
+							<a href="reserveone.do?tit=<%=dto.getTitle()%>">
+								예매하기
+							</a>
+						</div>
+						<%
+					}
+					else{
+						%>
+						<div class="reserve-btn hover1">
+							<a href="moviedetail.do?movieid=<%=dto.getUrl()%>">
+								영화정보
+							</a>
+						</div>
+						<%
+					}
+				%>
 				</div>
 		
 			<%
@@ -101,7 +123,7 @@ String choice = request.getParameter("choice");
 		
 	</div>
 
-	<div class="more-btn hover2" onclick="location.href='movielist.do'">
+	<div class="more-btn hover2" onclick="location.href='movielist.do?choice=now'">
 		<i class="fas fa-search-plus"></i>
 		<span>더 많은 영화보기</span>
 	</div>

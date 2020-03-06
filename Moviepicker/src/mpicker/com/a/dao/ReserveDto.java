@@ -2,7 +2,8 @@ package mpicker.com.a.dao;
 
 public class ReserveDto {
 	
-	private String id;	// 결제창에서 
+	private int seq;
+	private String email;	// 결제창에서 
 	private String movieTitle;
 	private String location;
 	private String theater;
@@ -18,31 +19,37 @@ public class ReserveDto {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public ReserveDto(String id, String movieTitle, String location, String theater, String movieDate, String movieTime,
-			String payment, int ticketNum, int price, String pdate) {
+	public ReserveDto(int seq, String email, String movieTitle, String location, String theater, String movieDate,
+			String movieTime, String payment, String seats, int ticketNum, int price, String pdate) {
 		super();
-		this.id = id;
+		this.seq = seq;
+		this.email = email;
 		this.movieTitle = movieTitle;
 		this.location = location;
 		this.theater = theater;
 		this.movieDate = movieDate;
 		this.movieTime = movieTime;
 		this.payment = payment;
+		this.seats = seats;
 		this.ticketNum = ticketNum;
 		this.price = price;
 		this.pdate = pdate;
 	}
 
-
-
-
-	public String getId() {
-		return id;
+	public int getSeq() {
+		return seq;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getMovieTitle() {
@@ -61,6 +68,14 @@ public class ReserveDto {
 		this.location = location;
 	}
 
+	public String getTheater() {
+		return theater;
+	}
+
+	public void setTheater(String theater) {
+		this.theater = theater;
+	}
+
 	public String getMovieDate() {
 		return movieDate;
 	}
@@ -75,6 +90,22 @@ public class ReserveDto {
 
 	public void setMovieTime(String movieTime) {
 		this.movieTime = movieTime;
+	}
+
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+
+	public String getSeats() {
+		return seats;
+	}
+
+	public void setSeats(String seats) {
+		this.seats = seats;
 	}
 
 	public int getTicketNum() {
@@ -101,42 +132,14 @@ public class ReserveDto {
 		this.pdate = pdate;
 	}
 
-
-
-	public String getTheater() {
-		return theater;
-	}
-
-
-
-	public void setTheater(String theater) {
-		this.theater = theater;
-	}
-
-
-
-	public String getPayment() {
-		return payment;
-	}
-
-
-	public void setPayment(String payment) {
-		this.payment = payment;
-	}
-
-
 	@Override
 	public String toString() {
-		return "ReserveDto [id=" + id + ", movieTitle=" + movieTitle + ", location=" + location + ", theater=" + theater
-				+ ", movieDate=" + movieDate + ", movieTime=" + movieTime + ", payment=" + payment + ", ticketNum="
-				+ ticketNum + ", price=" + price + ", pdate=" + pdate + "]";
+		return "ReserveDto [seq=" + seq + ", email=" + email + ", movieTitle=" + movieTitle + ", location=" + location
+				+ ", theater=" + theater + ", movieDate=" + movieDate + ", movieTime=" + movieTime + ", payment="
+				+ payment + ", seats=" + seats + ", ticketNum=" + ticketNum + ", price=" + price + ", pdate=" + pdate
+				+ "]";
 	}
 
-
-	
-
-
-	
 
 }
 

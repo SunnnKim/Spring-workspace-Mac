@@ -46,27 +46,33 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="movielist.do",method= {RequestMethod.GET,RequestMethod.POST})
-	public String movielist(){
+	public String movielist( Model model, String choice){
 		
 		logger.info("MemberController movielist.do " + new Date());
-		
+		List<MovieDto> list = MovieManager.getMovieList(choice);
+		model.addAttribute("list",list);
 		return "movielist";
 	}
 	
 	@RequestMapping(value="moviedetail.do",method= {RequestMethod.GET,RequestMethod.POST})
-	public String moviedetail(){
+	public String moviedetail(Model model, String movieid){
 		
 		logger.info("MemberController moviedetail.do " + new Date());
+		
+		MovieDto dto = MovieManager.getMovieDetail(movieid);
+		model.addAttribute("dto",dto);
+		
 		
 		return "moviedetail";
 	}
 	
 	
 	@RequestMapping(value="reserve.do",method= {RequestMethod.GET,RequestMethod.POST})
-	public String reserve(){
+	public String reserve(Model model){
 		
 		logger.info("MemberController reserve.do " + new Date());
-		
+		List<String> list = MovieManager.getAllMovieTitle();
+		model.addAttribute("list",list);
 		return "reserve";
 	}
 	
@@ -94,6 +100,31 @@ public class MemberController {
 		
 		model.addAttribute("dto",dto);
 		return "beforepay";
+	}
+	
+	// 특정영화 예매하기
+	@RequestMapping(value="reserveone.do",method= {RequestMethod.GET,RequestMethod.POST})
+	public String reserveOne(String tit,Model model) {
+		return "reserveone";
+	}
+	
+	
+	/******************************************************************************/
+	// member controller
+	// 회원가입하기  
+	@ResponseBody	//	- AJax
+	@RequestMapping(value="insertmember.do", method=RequestMethod.POST,produces = "application/String; charset=utf-8")
+	public String insertMember( MemberDto dto ) {	// Ajax 
+		boolean success = memberService.insertMember(dto);
+		return success + "";
+	}
+	
+	// 로그인 체크
+	@ResponseBody // - Ajax
+	@RequestMapping(value="logincheck.do", method=RequestMethod.POST,produces = "application/String; charset=utf-8")
+	public String loginCheck(String id, String pwd ) {
+		
+		return;
 	}
 	
 	

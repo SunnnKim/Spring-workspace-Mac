@@ -26,13 +26,43 @@ font-size: 20px; padding: 20px; text-align: center; line-height: 30px; }
 .movielist-box .movie-content .title-img { width: 235px; margin: 0 auto; }
 .movielist-box .movie-content a{ display: inline-block; width: 100%; height: 100%;}
 /* 이미지 호버시 이벤트 */
-.movielist-box .movie-content .img-cover{ position: absolute; width: 235px; height: 343px;
-    display: none; color: #fff; font-size: 20px; }
+.movielist-box .movie-content .img-cover{ 
+	position: absolute;
+    width: 235px;
+    height: 340px;
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    background: #000;
+    opacity: 0.7;
+    
+  
+	
+}
+    
+.movielist-box .movie-content .img-cover > div{
+    padding: 18px;
+    width: 100%;
+    height: 320px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    display: -webkit-box;
+    transition: all 0.4s ease-in-out;
+}
+    
 .hover1{ transition: all 0.2s ease-in-out; }
 .hover1:hover{ background: rgba(3, 3, 3, 0.3); }
 .movielist-box .movie-content a:hover .img-cover { display: block; border: 1px solid #aaaaaa;}
 .movielist-box .movie-content a img{ width: 100%; }
-.movielist-box .movie-content .movielist-title { font-size: 18px; font-weight: 600; }
+.movielist-box .movie-content .movielist-title { font-size: 18px;
+    height: 50px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 28px; }
 .movielist-box .movie-content .movie-stars{ font-size: 20px; font-weight: 600; color: #037b94;
     width: 47%; height: 50px; line-height: 50px; text-align: center;display:inline-block; 
     border: 1px solid #037b94; margin: 10px 0; margin-right:10px; border-radius: 4px;} 

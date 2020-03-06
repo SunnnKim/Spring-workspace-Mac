@@ -15,6 +15,6 @@ public interface MemberDao {
 	// join
 	public boolean insertMember(MemberDto dto);
 	// login check
-	public MemberDto login(MemberDto dto);
+	public MemberDto loginCheck(MemberDto dto);
 	
 }

@@ -2,7 +2,7 @@
 
 /* 페이지 제목  */
 .page-label { text-align: center; font-size: 40px; font-weight: 600; border-bottom: 5px solid; width: 300px;
-	margin: 0 auto;}
+	margin: 0 auto; margin-bottom: 60px;}
 /* 순서 레이블  */
 .lables { font-size: 25px; margin-top:30px; padding: 10px 20px; border-bottom: 1px solid #eaeaea; 
 	background:  #333; color:#fff;	
@@ -22,9 +22,9 @@
 /* 결제 정보 입력  */
 /* 티켓  */
 .reserve-info{ }
-.reserve-info .tickets-info { height: 150px; }
+.reserve-info .tickets-info { height: 200px; margin-top:30px;}
 .reserve-info .reserve-label { font-size: 20px; border-bottom: 1px solid #eaeaea;}
-.reserve-info .ticket-num { margin:10px 0; }
+.reserve-info .ticket-num { margin:25px 0; }
 
 .reserve-info .ticket-num > span { float: left; display: block; width: 100px; font-size: 15px; }
 .reserve-info .ticket-num i { font-size: 20px; margin: 0 10px;}
@@ -36,12 +36,34 @@
 
 
 /* 좌석  */
-.reserve-info .seat-info { height: 150px; border-bottom: 1px solid #eaeaea;}
+.reserve-info .seat-info { height: 150px; margin: 50px 0;}
 .seats-info { padding: 20px 0;}
 .seats-info .seat-select {float: left; width: 150px; height: 50px; line-height: 50px;
 	text-align: center; margin:10px;  border: 1px solid #eaeaea; transition:all 0.3s ease-in-out;}
 .seats-info .seat-select:hover{ background: #037b94; color:#fff;}
 .seats-info p {float: left; line-height: 50px;}
+
+
+
+/* 결제방법 */
+.payment-info { margin-bottom: 50px; }
+.payment-info .payment-info2{ padding:30px 0; font-size: 20px;}
+.payment-info .payment-info2 .payment{margin:0 10px;}
+.payment-info {}
+
+/* 가격정보 */
+.price-info { height: 80px; margin-bottom: 50px;  }
+.price-info .price-info2 {  float:right; line-height: 80px;
+    font-size: 30px; margin-right: 30px;}
+.price-info .price-info2 span{ margin: 0 10px;}
+
+/* 결제하기 버튼  */
+.pay-btn { width:200px; height: 80px; line-height: 80px; text-align: center; border-radius:4px;
+	border: 1px solid; margin: 20px auto; font-size: 20px; cursor:pointer; margin-bottom: 40px;
+transition: all 0.9s, color 0.2s;
+}
+.pay-btn:hover { border: 1px solid #037b94; color:#fff; }
+.hover1:hover{box-shadow:250px 0 0 0 #037b94 inset;}
 
 
 	

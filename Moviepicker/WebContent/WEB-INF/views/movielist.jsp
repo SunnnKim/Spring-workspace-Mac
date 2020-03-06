@@ -1,158 +1,83 @@
+<%@page import="mpicker.com.a.model.MovieDto"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../../include/header.jsp" %><!-- header -->
 <%@ include file="../../include/location.jsp" %><!-- location -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/movielist.css">
 
+<%
+List<MovieDto> list = (List<MovieDto>) request.getAttribute("list");
+String choice = (String) request.getParameter("choice");
+%>
 
 <div class="content-box">
 	<div class="movielist-box">
 	    <span>BOX OFFICE</span>
 	    <div class="movie-sorting">
 	        <ul>
-	            <li><a href="#" id="released" class="on">현재상영작</a></li>
-	            <li><a href="#" id="scheduled">개봉예정작</a></li>
+	        <% if(choice.equals("now")){
+				%>
+	            <li><a href="movielist.do?choice=now" id="released" class="on">현재상영작</a></li>
+	            <li><a href="movielist.do?choice=scheduled" id="scheduled">개봉예정작</a></li>
+				<%
+	        }else{
+				%>
+	            <li><a href="movielist.do?choice=now" id="released">현재상영작</a></li>
+	            <li><a href="movielist.do?choice=scheduled" id="scheduled" class="on">개봉예정작</a></li>
+				<%
+	        	
+	        }
+	        	%>
 	        </ul>
 	    </div>
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
-	    
-	    <div class="movie-content">
-	        <div class="title-img">
-	            <a href="#">
-	                <div class="img-cover hover1">gffgfgf</div>
-	                <img src="https://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F1d80cc8636c644aabd2597fc090183101579244282177">
-	            </a>
-	        </div>
-	        <div class="movielist-title">작은 아씨들</div>
-	        <div>2020.02.22개봉 .   예매율 15.2%</div>
-	        <div class="movie-stars">
-	            <i class="fas fa-star"></i>
-	             7.1
-	        </div>
-	        <div class="reserve-btn">
-	            <a href="#">
-	                예매하기
-	            </a>
-	        </div>
-	    </div> <!-- movie-content -->
+	<% for(int i=0; i< list.size(); i++) { 
+		MovieDto dto = list.get(i);
+		%>
+		<div class="movie-content">
+		        <div class="title-img">
+		            <a href="moviedetail.do?movieid=<%=dto.getUrl()%>">
+		                <div class="img-cover hover1">
+		                	<div>
+			                	<%=dto.getAboutMovie() %>
+		                	</div>
+		                </div>
+		                <img src="<%=dto.getImgSrc()%>">
+		            </a>
+		        </div>
+		        <div class="movielist-title"><%=dto.getTitle() %></div>
+		        <div><%=dto.getResereRate() %></div>
+		        <div class="movie-stars">
+		            <i class="fas fa-star"></i>
+		             <%=dto.getStarrate() %>
+		        </div>
+		        <% if(dto.getResereRate().contains("예매율")){ 
+		        %>
+			        <div class="reserve-btn">
+			            <a href="reserveone.do?tit=<%=dto.getTitle()%>">
+			                예매하기
+			            </a>
+			        </div>
+		        <%
+		       	}else{
+		       		%>
+		       		<div class="reserve-btn">
+			            <a href="moviedetail.do?movieid=<%=dto.getUrl()%>">
+			               영화정보
+			            </a>
+			        </div>
+		       		<%
+		       	}
+		       	%>
+		        
+		    </div> <!-- movie-content -->
+		    
+		
+		
+		<%
+		
+		}	
+	%>
 	</div> <!-- movielist-box -->
 </div> <!-- content-box -->
 

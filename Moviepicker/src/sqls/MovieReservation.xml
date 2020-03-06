@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+<mapper namespace="Reservation">
+<!-- test용 쿼리문 -->
+<insert id="insertReservation" parameterType="mpicker.com.a.model.ReserveDto">
+INSERT INTO M_RESERVATION ( SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
+		MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE )
+VALUES( SEQ_RESERVE.NEXTVAL, #{email}, #{movieTitle}, #{location}, #{theater}, TO_DATE(#{movieDate}, 'YYYY.MM.DD'),
+		#{movieTime}, #{payment}, #{seats}, ${ticketNum}, ${price}, SYSDATE )
+</insert>
+
+
+
+</mapper>

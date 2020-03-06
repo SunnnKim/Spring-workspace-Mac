@@ -47,11 +47,11 @@ $(function() {
 	  $(document).ready(function() {
 	 
 	    $("#myBtn").click(function() {
-			if($("#ticketNum").val() == 0){
+			if($('#ticketNum').val() == 0){
 				alert('구매할 티켓 개수를 설정하세요');
 				return false;
 			}
-		var ticketnum = $("#ticketNum").val();
+		
 	      $("#myModal").css({
 	        "display": "block",
 	        "transition":"all 0.3s ease-in-out"
@@ -118,11 +118,13 @@ $(function() {
 	}
 
 // ticket number
+
 var arr = new Array();
 var count = 0;
 // 좌석 선택시 이벤트
 $(".seat").click(function(){
 	var $this = $(this);
+	var ticketnum = parseInt($("#ticketNum").val());
 	// 두번 클릭햇을시 
  	if(arr.includes($this.attr('id'))){
 		count--;
@@ -131,7 +133,7 @@ $(".seat").click(function(){
 	}
  	else if(count == ticketnum){
 		// 모두 선택했을 때
-		alert('좌석을 모두 선택');
+		alert('좌석을 모두 선택하셨습니다.');
 	}
 	else{
 		$this.css("backgroundColor","#000");
@@ -144,13 +146,20 @@ $(".seat").click(function(){
 	
 
 });
-
+// 리셋하기
+function reset(){
+	count = 0;
+	arr = new Array();
+	$("#seats").val("");
+	$("#seats-txt").text('');
+	$(".seat").css("backgroundColor","#fff");
+	
+}
 	
 
 //좌석 결정하기 
 $(".btn").click(function(){
-	
-	alert(count);
+	var ticketnum = parseInt($("#ticketNum").val());
 	if(count<ticketnum){
 		alert('좌석을 모두 선택해주세요.');
 		return false;

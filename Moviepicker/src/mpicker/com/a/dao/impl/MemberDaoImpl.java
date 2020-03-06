@@ -42,7 +42,7 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public MemberDto login(MemberDto dto) {
+	public MemberDto loginCheck(MemberDto dto) {
 		MemberDto loginuser = sqlSession.selectOne(namespace+"logincheck",dto);
 		return loginuser;
 	}

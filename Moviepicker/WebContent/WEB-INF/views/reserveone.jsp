@@ -17,8 +17,7 @@
 	}
 %>
 <%
-	// 상영중인 영화 제목 데이터 담아오기
-	List<String> list = (List<String>) request.getAttribute("list");
+String title = (String)request.getParameter("tit");
 %>
 <div class="content-box">
 
@@ -30,13 +29,7 @@
 		<div class="select-box1">
 			<p>영화</p>
 			<div class="select-movie">
-				<% for(int i = 0 ; i < list.size(); i++ ){ 
-					String title = list.get(i);
-					%>
-						<div class="movies"> <%= title %></div>
-					<%
-				}
-				%>
+				<div class="movies"> <%= title %></div>
 				<input type="hidden" id="movieTitle" name="movieTitle">
 			</div>
 		</div>
@@ -90,6 +83,7 @@
 				<div class="times">22:40</div>
 				<div class="times">23:55 (심야)</div>
 				<input type="hidden" id="movieTime" name="movieTime">
+				<input type="hidden" id="id" name="id">
 			</div>
 		</div>
 	</div>
@@ -271,13 +265,11 @@ $(".reserve-btn").hide();
 $(document).ready(function(){
 	
 	// 영화 클릭 
-	$(".movies").click(function(){
-		var $this = $(this);
+		var $this =$(".movies");
 		// 여기다 값넣어두기 
 		$this.css({'backgroundColor':'#037b94',"color":"#fff"}).siblings('div').css({'backgroundColor':'white',"color":"#000"});
 		$("#movieTitle").val($this.text());
 		$(".select-theater-1").show(1000);
-	});
 	
 	// 지역 클릭은 위에서 구현  
 	
