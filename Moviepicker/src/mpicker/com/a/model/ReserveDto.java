@@ -1,4 +1,4 @@
-package mpicker.com.a.dao;
+package mpicker.com.a.model;
 
 public class ReserveDto {
 	
@@ -14,13 +14,17 @@ public class ReserveDto {
 	private int ticketNum;	// 결제창에서 
 	private int price;		// 결제창에서 
 	private String pdate;	// 결제일 -> 디비에서 
+	private int del;
+	
 	
 	public ReserveDto() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public ReserveDto(int seq, String email, String movieTitle, String location, String theater, String movieDate,
-			String movieTime, String payment, String seats, int ticketNum, int price, String pdate) {
+			String movieTime, String payment, String seats, int ticketNum, int price, String pdate, int del) {
 		super();
 		this.seq = seq;
 		this.email = email;
@@ -34,7 +38,10 @@ public class ReserveDto {
 		this.ticketNum = ticketNum;
 		this.price = price;
 		this.pdate = pdate;
+		this.del = del;
 	}
+
+
 
 	public int getSeq() {
 		return seq;
@@ -132,14 +139,17 @@ public class ReserveDto {
 		this.pdate = pdate;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "ReserveDto [seq=" + seq + ", email=" + email + ", movieTitle=" + movieTitle + ", location=" + location
 				+ ", theater=" + theater + ", movieDate=" + movieDate + ", movieTime=" + movieTime + ", payment="
 				+ payment + ", seats=" + seats + ", ticketNum=" + ticketNum + ", price=" + price + ", pdate=" + pdate
-				+ "]";
+				+ ", del=" + del + "]";
 	}
 
+	
 
 }
 

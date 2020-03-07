@@ -87,7 +87,26 @@ label.invisible{*position:Absolute;}
 * html .clfix {height:1%;} /* Hides from IE-mac */
 .clfix {zoom:1;} /*for IE 5.5-7*/
 
+.warn-msg {
+  color: crimson;
+}
+.correct-msg {
+  color: yellowgreen;
+}
+.info-msg {
+  color: #037b94;
+}
+.alert-msg {
+  color: #222;
+}
+.messages {
+  height: 25px;
+  padding-left: 80px;
+}
 
+.inputs {
+  font-size: 13px;
+}
 /* padding, margin setting */
 .pt00 {padding-top: 0px !important;}
 .pt05 {padding-top: 5px !important;}

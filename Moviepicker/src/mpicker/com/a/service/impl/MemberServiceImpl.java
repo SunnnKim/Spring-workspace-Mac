@@ -23,8 +23,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public boolean idCheck(String id) {
-		return memberDao.idCheck(id);
+	public boolean emailCheck(String email) {
+		return memberDao.emailCheck(email);
 	}
 
 	@Override
@@ -33,8 +33,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDto login(MemberDto dto) {
-		return memberDao.login(dto);
+	public MemberDto loginCheck(MemberDto dto) {
+		return memberDao.loginCheck(dto);
 	}
 	
 	

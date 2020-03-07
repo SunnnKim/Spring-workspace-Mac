@@ -33,11 +33,12 @@ div{
   font-weight: 800;
   display: flex;
   justify-content: center;
-  font-size: 25px;
+  font-size: 30px;
    background: linear-gradient(to right,#3A1C71,#D76D77,#FFAF7B);
     /* linear-gradient(to right,#3A1C71,#D76D77,#FFAF7B) */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+     font-family: 'Chakra Petch', sans-serif;
 }
 .inputs {
   display: block;
@@ -51,7 +52,6 @@ div{
   border-radius: 40px;
   background-color: #eaeaea;
   color: #858585;
-  font-size: 17px;
 }
 
 
@@ -80,15 +80,6 @@ input::placeholder{
 }
 #submit-button:hover {
   background-color: #037b94;
-}
-.messages {
-  padding-left: 60px;
-}
-.warn {
-  color: crimson;
-}
-.correct {
-  color: yellowgreen;
 }
 .aTag {
   text-decoration: none;

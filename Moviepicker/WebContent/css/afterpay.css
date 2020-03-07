@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+/* 페이지 제목  */
+.page-label { text-align: center; font-size: 40px; font-weight: 600; border-bottom: 5px solid; width: 300px;
+	margin: 40px auto; margin-bottom: 100px;}
+	
+.lables { font-size: 25px; margin-top:30px; padding: 10px 20px; border-bottom: 1px solid #eaeaea; 
+	background:  #333; color:#fff;	
+}
+
+/*영화정보 */
+.movie-info, .reserve-info {    
+    padding: 20px 20px; 
+    border: 1px solid #eaeaea;
+}
+.movie-info > div { 
+	margin: 10px 0;
+    font-size: 17px;
+    color:#858585;
+}
+.movie-info .movieTitle { font-size: 30px; color: #333; }
+
+/* 결제 정보  */
+.movie-info, .reserve-info {    
+    padding: 20px 20px; 
+    border: 1px solid #eaeaea;
+}
+.movie-info > div { 
+	margin: 10px 0;
+    font-size: 17px;
+    color:#858585;
+}
+.movie-info .movieTitle { font-size: 30px; color: #333; }
+
+/* 결제 정보 입력  */
+/* 티켓  */
+.reserve-info{ }
+.reserve-info .tickets-info { height: 200px; margin-top:30px;}
+.reserve-info .reserve-label { font-size: 20px; border-bottom: 1px solid #eaeaea;}
+.reserve-info .ticket-num { margin:25px 0; }
+
+.reserve-info .ticket-num > span { float: left; display: block; width: 100px; 
+margin: 10px 0; font-size: 15px; font-weight: 500; }
+.reserve-info .ticket-num > span.data {float: right;
+    text-align: left;
+    width: 85%; font-weight: 400; }
+    
+    
+.btn{ margin: 40px 0;}
+.btn a{ display:block; border: 1px solid #037b94; background: #037b94; 
+		width:150px; height: 50px; text-align: center; line-height: 50px; margin: 0 auto;
+		 }
+.btn a:hover{ border: 1px solid #037b94; background: #fff;}

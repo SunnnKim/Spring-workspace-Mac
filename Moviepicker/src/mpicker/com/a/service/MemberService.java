@@ -8,11 +8,11 @@ import mpicker.com.a.model.MemberDto;
 public interface MemberService {
 	
 	public List<MemberDto> allMember();
-	// idCheck
-	public boolean idCheck(String id);
 	// join
 	public boolean insertMember(MemberDto dto);
+	// idCheck
+	public boolean emailCheck(String email);
 	// login
-	public MemberDto login(MemberDto dto);
+	public MemberDto loginCheck(MemberDto dto);
 
 }

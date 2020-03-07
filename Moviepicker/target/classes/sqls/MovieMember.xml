@@ -7,8 +7,22 @@
   
 <mapper namespace="Member">
 <!-- test용 쿼리문 -->
+<!-- Join -->
 <insert id="insertmember" parameterType="mpicker.com.a.model.MemberDto">
 INSERT INTO MOVIEMEMBER ( EMAIL, PWD, NAME, AUTH )
 VALUES ( #{email}, #{pwd}, #{name}, 1 )
 </insert>
+<!-- Email 중복 체크  -->
+<select id="emailcheck" parameterType="java.lang.String" resultType="int">
+SELECT COUNT(*)
+FROM MOVIEMEMBER
+WHERE EMAIL = #{ email }
+</select>
+<!-- Login check -->
+<select id="logincheck" parameterType="mpicker.com.a.model.MemberDto" resultType="mpicker.com.a.model.MemberDto">
+SELECT EMAIL, NAME
+FROM MOVIEMEMBER
+WHERE email = #{email} AND PWD= #{pwd}
+</select>
+
 </mapper>

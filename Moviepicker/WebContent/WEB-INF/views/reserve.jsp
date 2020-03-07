@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/modal.css">
 <%
 	// login Session
-	MemberDto loginuser = (MemberDto) session.getAttribute("loginuser");
 	boolean logincheck = true;
 
 	if( loginuser == null ){
@@ -377,9 +376,6 @@ $("#gotopage").click(function(){
 		alert('로그인이 필요합니다.');
 		location.href="login.do";
 		return false;
-	}else{
-		$("#id").val(id);
-		alert(id);
 	}
 	$("#frm").attr("action","beforepay.do");
 	$("#frm").submit();

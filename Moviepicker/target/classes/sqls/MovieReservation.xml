@@ -7,13 +7,36 @@
   
 <mapper namespace="Reservation">
 <!-- test용 쿼리문 -->
+<!-- 결제하기 -->
 <insert id="insertReservation" parameterType="mpicker.com.a.model.ReserveDto">
 INSERT INTO M_RESERVATION ( SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
-		MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE )
+		MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE, DEL )
 VALUES( SEQ_RESERVE.NEXTVAL, #{email}, #{movieTitle}, #{location}, #{theater}, TO_DATE(#{movieDate}, 'YYYY.MM.DD'),
-		#{movieTime}, #{payment}, #{seats}, ${ticketNum}, ${price}, SYSDATE )
+		#{movieTime}, #{payment}, #{seats}, ${ticketNum}, ${price}, SYSDATE, 0 )
 </insert>
-
-
+<!-- 결제내역 불러오기 (1개) -->
+<select id="reservationdetail" parameterType="int" resultType="mpicker.com.a.model.ReserveDto">
+SELECT *
+FROM M_RESERVATION
+WHERE SEQ = ${seq}
+</select>
+<!-- 결제내역 모두 불러오기 -->
+<select id="reservationlist" parameterType="int" resultType="mpicker.com.a.model.ReserveDto">
+SELECT SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
+		MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE, DEL
+FROM ( SELECT ROW_NUMBER()OVER(ORDER BY PDATE) AS RNUM, 
+            SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
+            MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE, DEL
+        FROM M_RESERVATION
+        WHERE DEL = 0
+    )
+WHERE RNUM > 10 * ( ${page} - 1 ) AND RNUM &lt;= 10 + 10 * ( ${page} - 1 );
+</select>
+<!-- 모든 컨텐츠 개수 불러오기 -->
+<select id="numberofcontents" resultType="int">
+SELECT COUNT(*)
+FROM M_RESERVATION
+WHERE DEL = 0;
+</select>
 
 </mapper>

@@ -1,11 +1,14 @@
+<%@page import="mpicker.com.a.model.MemberDto"%>
 <%@page import="mpicker.com.a.model.MovieDto"%>
 <%@page import="java.util.List"%>
 <%@page import="mpicker.com.a.movie.MovieManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%
-
+	// session
+	MemberDto loginuser = (MemberDto)session.getAttribute("loginuser");
+%>
+<%
 List<MovieDto> list = (List<MovieDto>) request.getAttribute("list");
 String choice = request.getParameter("choice");
 %>
@@ -27,8 +30,18 @@ String choice = request.getParameter("choice");
 <body>
 <div class="header-box">
     <div class="user-option">
-        <a href="join.do"><span>JOIN</span></a>
-        <a href="login.do"><span>LOGIN</span></a>
+    <% if(loginuser==null){
+		%>
+	        <a href="join.do"><span>JOIN</span></a>
+	        <a href="login.do"><span>LOGIN</span></a>
+		<%
+    	}else{
+    		%>
+	        <a href="mypage.do"><span>Mypage</span></a>
+	        <a href="logout.do"><span>Logout</span></a>
+    		<%
+    	}
+    	%>
     </div>
     <div class="gnb">
         <ul>
@@ -42,9 +55,21 @@ String choice = request.getParameter("choice");
             <li><a href="#">Schedule</a></li>
             <li><a href="#">Comments</a></li>
             <li>
-            	<a href="#">
+            <!-- 마이페이지 -> 예매내역 -->
+            <% if(loginuser==null){
+			%>
+            	<a href="login.do" onclick="loginAlert()">
                 	<i class="fas fa-user-circle"></i>
             	</a>
+			<%
+	    	}else{
+	    		%>
+            	<a href="reservationlist.do?page=1">
+                	<i class="fas fa-user-circle"></i>
+            	</a>
+	    		<%
+	    	}
+	    	%>
             </li>
         </ul>
     </div>
@@ -137,7 +162,7 @@ String choice = request.getParameter("choice");
 	</div>
 	<div class="mid-content">
 		<div class="search">
-			<input type="text" value="12" maxlength="50">
+			<input type="text" maxlength="50">
 			<a href="#">
 				<i class="fas fa-search"></i>
 			</a>
@@ -196,12 +221,18 @@ String choice = request.getParameter("choice");
 </div>
 
 <script type="text/javascript">
+// 현재상영 / 개봉예정 css 구분 
 var choice = "<%=choice%>";
 if(choice==="now"){
 	$("#now").addClass("on");
 }else{
 	$("#scheduled").addClass("on");
 	
+}
+
+// 로그인 안되어있을 시 경고 
+function loginAlert(){
+	alert('로그인이 필요합니다.');
 }
 </script>
 

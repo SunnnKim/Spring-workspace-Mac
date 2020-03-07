@@ -10,10 +10,10 @@ public interface MemberDao {
 	// 사용할 함수를 선언해둔다
 	public List<MemberDto> allMember();
 	
-	// idCheck
-	public boolean idCheck(String id);
 	// join
 	public boolean insertMember(MemberDto dto);
+	// emailCheck
+	public boolean emailCheck(String email);
 	// login check
 	public MemberDto loginCheck(MemberDto dto);
 	

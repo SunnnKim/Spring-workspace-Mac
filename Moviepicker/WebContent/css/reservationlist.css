@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.content-wrapper{ height: 800px;}
+.menu, .contents { 	height: 100%;}
+.menu{ width:20%; float: left; background: #f7f7f7;}
+
+ .menu .depth03:first-child{ margin-top: 30px; }
+.menu .depth03 a{ 
+	color: #000;
+    display: block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+.menu .depth03 a:hover { background: #333; color:#fff;}
+/* menu on */
+#on{ background: #037b93; color:#fff; }
+	
+/* content setting */
+.contents { width:80%; float: left;}
+.contents .title { height:15%; text-align: center; padding: 30px 0; font-size: 30px; }
+.contents .title span{ padding: 10px 0; }
+.contents .bbs-wrapper{ height: 85%}	
+
+
+
+/* reservelist  ------ Title */
+.contents  .bbs-wrapper .reservelist-title { height: 40px;margin: 0 50px; 
+	background: #eaeaea; display: grid; grid-template-columns: 5% 45% 30% 20%; }
+.contents  .bbs-wrapper .reservelist-title span{ text-align: center; line-height: 40px; }
+
+
+
+/* reservelist ------- Content */
+.reservelist-contents { height: 515px;}
+.reservelist-contents .reserve-content{  margin: 10px 50px; height: 40px;
+display: grid; grid-template-columns: 5% 45% 30% 20%; border-bottom: 1px solid #eaeaea; }
+.reservelist-contents .reserve-content > span { text-align: center;font-size: 18px;
+	line-height: 40px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reservelist-contents .reserve-content > span a{
+	padding: 1px 20px; border: 1px solid #037b93; color: #037b93; 
+	transition: all 0.2s ease-in-out;}
+.reservelist-contents .reserve-content > span a:hover { 
+	background: #037b93; color: #fff; }
+	
+	
+/* paging div */
+.reservelist-paging{ text-align: center; font-size: 20px;}
+.reservelist-paging > span{ margin: 0 3px;}
+.reservelist-paging > span.on{ border-bottom: 3px solid;}
+.reservelist-paging > span a{ color:#000;}
+.reservelist-paging > span a:hover{ color:#037b93;}
+

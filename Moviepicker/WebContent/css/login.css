@@ -48,7 +48,6 @@ div{
     border-radius: 40px;
     background-color: #eaeaea;
     color: #858585;
-    font-size: 17px;
 }
 input::placeholder{
 	color:#fff;
@@ -75,15 +74,6 @@ input::placeholder{
 }
 #submit-button:hover {
     background-color: #037b94;
-}
-.messages {
-    padding-left: 60px;
-}
-.warn {
-    color: crimson;
-}
-.correct {
-    color: yellowgreen;
 }
 #extra-wrapper {
     text-align: center;

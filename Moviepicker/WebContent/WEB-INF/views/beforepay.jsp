@@ -1,4 +1,4 @@
-<%@page import="mpicker.com.a.dao.ReserveDto"%>
+<%@page import="mpicker.com.a.model.ReserveDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../../include/header.jsp" %><!-- header -->
@@ -117,7 +117,7 @@ ReserveDto dto = (ReserveDto) request.getAttribute("dto");
 
 <!-- input / hidden -->
 <form id="frm" action="" method="post">
-	<input type="hidden" name="id" value="loginuser">
+	<input type="hidden" name="email" value="<%=loginuser.getEmail()%>">
 	<input type="hidden" name="movieTitle" value="<%=dto.getMovieTitle()%>">
 	<input type="hidden" name="location" value="<%=dto.getLocation()%>">
 	<input type="hidden" name="theater" value="<%=dto.getTheater()%>">
@@ -260,7 +260,7 @@ function gotopay(){
 		return false;
 	} */
 	if(confirm('결제하시겠습니까?')){
-		$("#frm").attr("action","pay.do");
+		$("#frm").attr({"action":"pay.do","method":"post"});
 		$("#frm").submit();
 	}
 }
