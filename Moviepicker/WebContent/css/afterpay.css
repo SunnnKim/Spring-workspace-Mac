@@ -47,8 +47,11 @@ margin: 10px 0; font-size: 15px; font-weight: 500; }
     width: 85%; font-weight: 400; }
     
     
-.btn{ margin: 40px 0;}
-.btn a{ display:block; border: 1px solid #037b94; background: #037b94; 
+.btn{ margin: 40px 0; text-align: center;}
+.btn a, .btn > div { display:inline-block; border: 1px solid #037b94; background: #037b94; 
 		width:150px; height: 50px; text-align: center; line-height: 50px; margin: 0 auto;
 		 }
-.btn a:hover{ border: 1px solid #037b94; background: #fff;}
+.btn a:hover, .btn div:hover{ border: 1px solid #037b94; background: #fff;}
+
+.btn #cancel-btn{color:#fff;}
+.btn #cancel-btn:hover {color:#037b94;}

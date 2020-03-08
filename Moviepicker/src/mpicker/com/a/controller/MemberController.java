@@ -57,7 +57,6 @@ public class MemberController {
 	@ResponseBody // - Ajax
 	@RequestMapping(value="logincheck.do", method=RequestMethod.POST,produces = "application/String; charset=utf-8")
 	public String loginCheck(MemberDto dto, HttpSession session) {
-		System.out.println(dto);
 		MemberDto loginuser = memberService.loginCheck(dto);
 		if(loginuser == null || loginuser.getEmail().equals("") ) {
 			return "false";
@@ -74,5 +73,55 @@ public class MemberController {
 		return "redirect: main.do?choice=now";
 	}
 	
+	// my page
+	// 회원 정보보기
+	@RequestMapping(value="mypage.do",method=RequestMethod.GET)
+	public String myPage(Model model, HttpSession session) {
+		
+		return "mypage";
+	}
 	
+	
+	// pwd check
+	@ResponseBody
+	@RequestMapping(value="pwdcheck.do", method=RequestMethod.POST,produces = "application/String; charset=utf-8")
+	public String pwdCheck(String pwd, HttpSession session) {
+		MemberDto dto = (MemberDto)session.getAttribute("loginuser");
+		dto.setPwd(pwd);
+		boolean exist = memberService.pwdCheck(dto);
+		return exist+"";
+	}
+	
+	// 회원 정보 수정하기
+	@ResponseBody
+	@RequestMapping(value="updatemember.do",method=RequestMethod.POST,produces = "application/String; charset=utf-8")
+	public String updateMember(MemberDto dto,HttpSession session) {
+		boolean success = false;
+		// 이름만 바꾸기 
+		if( dto.getPwd() == null || dto.getPwd().equals("")) {
+			success = memberService.updateName(dto);
+		}
+		// 비번 이름 바꾸기 
+		else {
+			success = memberService.updateAll(dto);
+			dto.setPwd("");
+		}
+		session.setAttribute("loginuser", dto);
+		return success+"";
+	}
+	
+	// 회원 탈퇴 뷰 
+	@RequestMapping(value="deleteaccountview.do",method=RequestMethod.GET)
+	public String deleteAccountView() {
+		return "deleteaccount";
+	}
+	// 회원 탈퇴하기
+	@ResponseBody
+	@RequestMapping(value="deleteaccount.do",method=RequestMethod.POST,produces = "application/String; charset=utf-8")
+	public String deleteAccount(String email) {
+		boolean success = memberService.deleteAccount(email);
+		return success + "";
+	}
+	
+		
 }

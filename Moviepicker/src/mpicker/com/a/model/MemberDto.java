@@ -2,6 +2,22 @@ package mpicker.com.a.model;
 
 import java.io.Serializable;
 
+/*
+  -- DROP TABLE
+DROP TABLE MOVIEMEMBER
+CASCADE CONSTRAINTS;
+
+
+-- MOVIEMEMBER TABLE
+CREATE TABLE MOVIEMEMBER(
+    EMAIL VARCHAR2(100) PRIMARY KEY,
+    PWD VARCHAR2(50) NOT NULL,
+    NAME VARCHAR2(30) NOT NULL,
+    AUTH NUMBER(8) NOT NULL
+);
+
+
+ */
 public class MemberDto implements Serializable {
 	// 회원정보 클래스
 	private String email;

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import mpicker.com.a.dao.ReservationDao;
+import mpicker.com.a.model.MyReservationDto;
 import mpicker.com.a.model.ReserveDto;
 
 @Repository
@@ -26,8 +27,8 @@ public class ReservationDaoImpl implements ReservationDao {
 	}
 
 	@Override
-	public List<ReserveDto> getAllReservation(int page) {
-		List<ReserveDto> list = sqlSession.selectList(namespace + "reservationlist", page);
+	public List<ReserveDto> getAllReservation(MyReservationDto dto) {
+		List<ReserveDto> list = sqlSession.selectList(namespace + "reservationlist", dto);
 		return list;
 	}
 
@@ -35,6 +36,18 @@ public class ReservationDaoImpl implements ReservationDao {
 	public int getAllContents() {
 		int number = sqlSession.selectOne(namespace+"numberofcontents");
 		return number;
+	}
+
+	@Override
+	public ReserveDto getReserveDetail(int seq) {
+		ReserveDto dto = sqlSession.selectOne(namespace+"reservationdetail", seq);
+		return dto;
+	}
+
+	@Override
+	public boolean deleteReservation(int seq) {
+		int count = sqlSession.update("deletereservation",seq);
+		return count >0 ? true:false ;
 	}
 
 	

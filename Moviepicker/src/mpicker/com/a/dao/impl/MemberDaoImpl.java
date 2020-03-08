@@ -49,12 +49,35 @@ public class MemberDaoImpl implements MemberDao {
 		MemberDto loginuser = sqlSession.selectOne(namespace+"logincheck",dto);
 		return loginuser;
 	}
+
+	@Override
+	public boolean pwdCheck(MemberDto dto) {
+		int count = sqlSession.selectOne(namespace+"pwdcheck",dto);
+		return count>0?true:false;
+	}
+
+	// 마이 페이지 : 회원정보 모두 수정
+	@Override
+	public boolean updateAll(MemberDto dto) {
+		int count = sqlSession.update(namespace+"updateall",dto);
+		return count>0?true:false;
+	}
+
+	// 마이 페이지 : 회원정보 이름만 수정
+	@Override
+	public boolean updateName(MemberDto dto) {
+		int count = sqlSession.update(namespace+"updatename",dto);
+		System.out.println("update name");
+		return count>0?true:false;
+	}
+
+	// 마이페이지 : 회원 탈퇴하기 
+	@Override
+	public boolean deleteAccount(String email) {
+		int count = sqlSession.update("deletemember", email);
+		return count>0?true:false;
+	}
 	
-	// 마이페이지 : 내 정보 불러오기 (auth != 0)
-	
-	// 마이 페이지 : 회원정보 수정
-	
-	// 마이페이지 : 회원탈퇴하기 (auth = 0)
 	
 	
 	

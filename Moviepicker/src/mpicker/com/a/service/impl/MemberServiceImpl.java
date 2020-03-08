@@ -36,6 +36,26 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDto loginCheck(MemberDto dto) {
 		return memberDao.loginCheck(dto);
 	}
+
+	@Override
+	public boolean pwdCheck(MemberDto dto) {
+		return memberDao.pwdCheck(dto);
+	}
+
+	@Override
+	public boolean updateAll(MemberDto dto) {
+		return memberDao.updateAll(dto);
+	}
+
+	@Override
+	public boolean updateName(MemberDto dto) {
+		return memberDao.updateName(dto);
+	}
+
+	@Override
+	public boolean deleteAccount(String email) {
+		return memberDao.deleteAccount(email);
+	}
 	
 	
 }

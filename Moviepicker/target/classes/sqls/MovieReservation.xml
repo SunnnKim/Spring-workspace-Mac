@@ -20,23 +20,30 @@ SELECT *
 FROM M_RESERVATION
 WHERE SEQ = ${seq}
 </select>
-<!-- 결제내역 모두 불러오기 -->
-<select id="reservationlist" parameterType="int" resultType="mpicker.com.a.model.ReserveDto">
+<!-- 나의 결제내역 모두 불러오기 -->
+<select id="reservationlist" parameterType="mpicker.com.a.model.MyReservationDto" resultType="mpicker.com.a.model.ReserveDto">
 SELECT SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
 		MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE, DEL
-FROM ( SELECT ROW_NUMBER()OVER(ORDER BY PDATE) AS RNUM, 
+FROM ( SELECT ROW_NUMBER()OVER(ORDER BY PDATE DESC) AS RNUM, 
             SEQ, EMAIL, MOVIETITLE, LOCATION, THEATER, MOVIEDATE,
             MOVIETIME, PAYMENT, SEATS, TICKETNUM, PRICE, PDATE, DEL
         FROM M_RESERVATION
-        WHERE DEL = 0
-    )
-WHERE RNUM > 10 * ( ${page} - 1 ) AND RNUM &lt;= 10 + 10 * ( ${page} - 1 );
+        WHERE DEL = 0 AND EMAIL = #{email})
+WHERE RNUM > 10 * ( ${page} - 1 ) AND RNUM &lt;= 10 + 10 * ( ${page} - 1 )
 </select>
 <!-- 모든 컨텐츠 개수 불러오기 -->
 <select id="numberofcontents" resultType="int">
 SELECT COUNT(*)
 FROM M_RESERVATION
-WHERE DEL = 0;
+WHERE DEL = 0
 </select>
+
+<!--  -->
+<update id="deletereservation" parameterType="int">
+UPDATE M_RESERVATION
+SET DEL = 1
+WHERE SEQ = ${seq}
+</update>
+
 
 </mapper>

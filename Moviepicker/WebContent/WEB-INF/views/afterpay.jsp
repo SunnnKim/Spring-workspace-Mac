@@ -3,7 +3,6 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../../include/header.jsp" %><!-- header -->
 <%@ include file="../../include/location.jsp" %><!-- location -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/afterpay.css"><!-- css -->
 <%
 // 결제 상태 확인하기
 boolean success = (boolean) request.getAttribute("success");
@@ -79,7 +78,7 @@ if(!success){
 		</div>
 	</div>
 	<div class="btn">
-		<a href="reservationlist.do?pg=1">목록보기</a>
+		<a href="reservationlist.do?page=1">목록보기</a>
 	</div>
 </div>
 <script>

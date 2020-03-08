@@ -22,7 +22,31 @@ WHERE EMAIL = #{ email }
 <select id="logincheck" parameterType="mpicker.com.a.model.MemberDto" resultType="mpicker.com.a.model.MemberDto">
 SELECT EMAIL, NAME
 FROM MOVIEMEMBER
-WHERE email = #{email} AND PWD= #{pwd}
+WHERE email = #{email} AND PWD= #{pwd} AND AUTH != 0
 </select>
+<!-- pwd check -->
+<select id="pwdcheck" parameterType="mpicker.com.a.model.MemberDto" resultType="int">
+SELECT COUNT(*)
+FROM MOVIEMEMBER
+WHERE EMAIL = #{email} AND PWD = #{pwd} AND AUTH != 0
+</select>
+<!-- 이름,비번 바꾸기 -->
+<update id="updateall" parameterType="mpicker.com.a.model.MemberDto">
+UPDATE MOVIEMEMBER
+SET PWD = #{pwd}, NAME = #{name}
+WHERE EMAIL = #{email} AND AUTH != 0
+</update>
+<!-- 이름만 바꾸기 -->
+<update id="updatename" parameterType="mpicker.com.a.model.MemberDto">
+UPDATE MOVIEMEMBER
+SET NAME = #{name}
+WHERE EMAIL = #{email} AND AUTH != 0
+</update>
+<!-- 회원탈퇴하기 -->
+<update id="deletemember" parameterType="mpicker.com.a.model.MemberDto">
+UPDATE MOVIEMEMBER
+SET AUTH = 0
+WHERE EMAIL = #{email}
+</update>
 
 </mapper>

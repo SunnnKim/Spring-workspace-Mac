@@ -57,7 +57,7 @@ MemberDto loginuser = (MemberDto)session.getAttribute("loginuser");
 			<%
 	    	}else{
 	    		%>
-            	<a href="mymovielist.do">
+            	<a href="reservationlist.do?page=1">
                 	<i class="fas fa-user-circle"></i>
             	</a>
 	    		<%

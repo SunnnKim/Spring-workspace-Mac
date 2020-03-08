@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mpicker.com.a.dao.ReservationDao;
+import mpicker.com.a.model.MyReservationDto;
 import mpicker.com.a.model.ReserveDto;
 import mpicker.com.a.service.ReservationService;
 
@@ -21,13 +22,23 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public List<ReserveDto> getAllReservation(int page) {
-		return reservationDao.getAllReservation(page);
+	public List<ReserveDto> getAllReservation(MyReservationDto dto) {
+		return reservationDao.getAllReservation(dto);
 	}
 
 	@Override
 	public int getAllContents() {
 		return reservationDao.getAllContents();
+	}
+
+	@Override
+	public ReserveDto getReserveDetail(int seq) {
+		return reservationDao.getReserveDetail(seq);
+	}
+
+	@Override
+	public boolean deleteReservation(int seq) {
+		return reservationDao.deleteReservation(seq);
 	}
 	
 }

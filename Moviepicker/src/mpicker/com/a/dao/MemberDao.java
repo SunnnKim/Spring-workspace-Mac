@@ -17,4 +17,12 @@ public interface MemberDao {
 	// login check
 	public MemberDto loginCheck(MemberDto dto);
 	
+	// pwd check
+	public boolean pwdCheck(MemberDto dto);
+	// update all
+	public boolean updateAll(MemberDto dto);
+	// update name
+	public boolean updateName(MemberDto dto);
+	// delete account
+	public boolean deleteAccount(String email);
 }
