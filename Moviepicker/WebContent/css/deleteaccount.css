@@ -10,6 +10,7 @@
 .bbs-wrapper .password-box .password{
 	height: 300px;
 }
+.bbs-wrapper .password-box .password input:focus{ outline:none;}
 .bbs-wrapper .password-box .password > div{
 	    margin: 30px auto; height:50px;
     text-align: center;}

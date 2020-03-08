@@ -175,7 +175,6 @@ $(document).ready(function () {
 	        dataType:"json",
 	        type: "post",
 	        success: function(data) {
-		        alert(data);
 		        if(data == true){
 			       	alert($("input[name=name]").val()+'님, 회원가입을 축하합니다!');
 			       	location.href = 'login.do';

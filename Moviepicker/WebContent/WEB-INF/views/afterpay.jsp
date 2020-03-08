@@ -3,6 +3,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../../include/header.jsp" %><!-- header -->
 <%@ include file="../../include/location.jsp" %><!-- location -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/afterpay.css"><!-- css -->
+
 <%
 // 결제 상태 확인하기
 boolean success = (boolean) request.getAttribute("success");

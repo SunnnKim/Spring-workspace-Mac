@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 body{ background:#000;}
-
-.menu-box{ /* display:none; */
+/* menu box */
+.menu-box{ display:none;
 	height: 100%; background: rgba(255,255,255,0.88); width: 100%; z-index: 11; position: fixed; }
 .menu-box #close{font-size: 36px; width: 25px; float: right; margin-right: 40px; cursor:pointer;}
 .menu-box .title { text-align: center; font-size:30px; border-bottom: 5px solid;
@@ -17,7 +17,7 @@ body{ background:#000;}
 .menu-box-content a{ cursor:pointer; color:#000;}
 .menu-box-content a:hover{ cursor:pointer; color:#037b93;}
 
-
+/* content start */
 .content-box .top-content{ }
 .content-box .top-content p {color:#fff; font-family: 'Bree Serif'; font-size: 40px; text-align: center; 
 display: inline-block; position: relative;left: 420px; top: 50px; border-bottom: 5px solid; }

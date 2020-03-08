@@ -45,14 +45,14 @@ if(loginuser == null ){ %>
 				<div class="member-info password">
 					<div>변경 비밀번호</div>
 					<div>
-						<input type="password" size="30" placeholder="비밀번호를 변경하시려면 입력하세요" name="pwd">
+						<input type="password" size="35" placeholder="비밀번호를 변경하시려면 입력하세요" name="pwd">
 						<div id="password-message"></div>
 					</div>
 				</div>
 				<div class="member-info password">
 					<div>비밀번호 확인</div>
 					<div>
-						<input type="password" size="30" placeholder="비밀번호를 변경하시려면 입력하세요" name="pwdCheck">
+						<input type="password" size="35" placeholder="비밀번호를 변경하시려면 입력하세요" name="pwdCheck">
 						<div id="password-chk-message"></div>
 					</div>
 				</div>

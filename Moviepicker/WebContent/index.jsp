@@ -11,9 +11,6 @@
 </head>
 <body>
 
-<!-- 
-<a href="main.do?choice=now">main.do</a>
- -->
 <a href="main.do?choice=now">main.do</a>
 
 </body>

@@ -41,11 +41,11 @@ if(loginuser == null ){ %>
 					<p>회원 탈퇴를 위해 비밀번호를 입력해주세요.</p>
 					<div class="password">
 						<div>
-							<input type="text" placeholder="비밀번호" size="30" name="pwd">
+							<input type="password" placeholder="비밀번호" size="30" name="pwd">
 							<div id="password-message"></div>
 						</div>
 						<div>
-							<input type="text" placeholder="비밀번호 확인" size="30" name="pwdCheck">
+							<input type="password" placeholder="비밀번호 확인" size="30" name="pwdCheck">
 							<div id="password-chk-message"></div>
 						</div>
 						<div>
