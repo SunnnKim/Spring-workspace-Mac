@@ -15,19 +15,15 @@ import mpicker.com.a.movie.MovieManager;
 @Controller
 public class ViewController {
 
-
 		// login view
 		@RequestMapping(value="login.do",method= {RequestMethod.GET,RequestMethod.POST})
 		public String login(){
-			
-			
 			return "login";
 		}
 		
 		// join view
 		@RequestMapping(value="join.do",method= {RequestMethod.GET,RequestMethod.POST})
 		public String join(){
-			
 			return "join";
 		}
 		

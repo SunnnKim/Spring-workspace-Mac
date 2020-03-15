@@ -23,7 +23,7 @@ public class ReservationDaoImpl implements ReservationDao {
 		
 		int count = sqlSession.insert(namespace + "insertReservation",dto);
 		
-		return count>0?true:false;
+		return count > 0 ? true : false;
 	}
 
 	@Override
@@ -46,8 +46,8 @@ public class ReservationDaoImpl implements ReservationDao {
 
 	@Override
 	public boolean deleteReservation(int seq) {
-		int count = sqlSession.update("deletereservation",seq);
-		return count >0 ? true:false ;
+		int count = sqlSession.update(namespace + "deletereservation", seq);
+		return count > 0 ? true : false;
 	}
 
 	

@@ -89,7 +89,7 @@ public class MemberController {
 		MemberDto dto = (MemberDto)session.getAttribute("loginuser");
 		dto.setPwd(pwd);
 		boolean exist = memberService.pwdCheck(dto);
-		return exist+"";
+		return exist + "";
 	}
 	
 	// 회원 정보 수정하기

@@ -34,7 +34,7 @@ public class ReservationController {
 	
 	// 모든 예매내역불러오기 + 페이징 
 	@RequestMapping(value="reservationlist.do",method= {RequestMethod.GET,RequestMethod.POST})
-	public String reservationList(MyReservationDto dto, Model model,HttpSession session) {
+	public String reservationList(MyReservationDto dto, Model model, HttpSession session) {
 		
 		String email = (String)((MemberDto) session.getAttribute("loginuser")).getEmail();
 		dto.setEmail(email);
