@@ -256,7 +256,7 @@ String choice = request.getParameter("choice");
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
             <i class="fab fa-line"></i>
-            <i class="fab fa-apple"></i>
+            <i class="f'ab fa-apple"></i>
         </div>
     </div>
 </div>
