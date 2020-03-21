@@ -16,6 +16,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+jdbc.properties
 
 # External tool builders
 .externalToolBuilders/
@@ -103,7 +104,7 @@ hs_err_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
-.properties
+
 
 # Icon must end with two \r
 Icon
