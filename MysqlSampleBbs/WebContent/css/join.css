@@ -1,0 +1,14 @@
+
+.box{ border: 1px solid #eaeaea; background: #f7f7f7;  height: 500px; text-align: center; margin: 0 auto; margin-top: 100px; width: 400px; 
+    box-shadow: 1px 1px 10px 1px #eaeaea;}
+    .box img{width: 100px; margin: 30px;}
+.box .content{ margin-bottom:20px;}
+.box .content input{ height: 30px; border: 0; border-bottom: 3px solid; margin-left: 10px;
+    font-size:15px; background: none;}
+.box .content input:focus{ outline:none}
+.box .btn-box .btn { color:#fff; width: 100px; height: 40px; margin: 20px auto;
+    line-height: 40px; font-size: 20px; border-radius: 15px; background: #037b93;}
+a:active, a:visited, a:link{ color: #333;}
+a{ color: #333;}
+a:hover{ color: #037b93}
+.fas, .far{ font-size: 20px;}

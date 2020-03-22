@@ -19,6 +19,7 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
 
 	<context:component-scan base-package="sample.com.a"/>
 

@@ -9,6 +9,7 @@
 <body>
 
 <h1>index.jsp</h1>
+<a href="login.do">test</a>
 
 </body>
 </html>
