@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<h1> main </h1>
-<h1> ${test } </h1>
-
+<h1>index.jsp</h1>
 
 </body>
 </html>
