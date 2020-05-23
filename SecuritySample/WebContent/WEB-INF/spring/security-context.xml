@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+				           http://www.springframework.org/schema/beans/spring-beans.xsd
+				           http://www.springframework.org/schema/security 
+				           http://www.springframework.org/schema/security/spring-security.xsd">
+          
+
+
+	<!-- security:http -->
+	<!-- 1. auto-config: true일 경우 default, 
+			false일 경우 : anonymous, x509, http-basic, session-management, 
+						expression-handler, custom-filter, port-mappings, 
+						request-cache, remember-me를 정의 해줘야 한다.  	-->
+  	<!-- 2. use-expressions :스프링 표현식 사용여부(spEL)  -->
+  	<!-- 3. csrf : csrf 보안 설정 여부
+  			(사이트 간 요청 위조(또는 크로스 사이트 요청 위조 (Cross-site request forgery, CSRF, XSRF)
+  			 웹사이트 취약점 공격의 하나로, 사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 하는 공격)-->
+	<!-- 4. intercept-url : pattern에 정의된 경로에 대해 access 권한을 지정(Filte가 감시함)  -->
+	<security:http auto-config="true" use-expressions="true">
+		<security:csrf disabled="true"/> 
+		<security:intercept-url pattern="/**" access="permitAll" /> 
+		
+		<!-- form-login -->
+		<!-- login-page : 로그인 페이지 url -->
+		<!-- username-parameter : form id의 name 속성값(아이디/이메일) -->
+		<!-- password-parameter : form iddml name 속성값 (비번)-->
+		<!-- login-processiong-url : form의 action 값 (security를 통한 인증처리) -->
+		
+		<!-- authentication-success-handler-ref : 로그인 성공시 프로세스 정의, bean id 입력 -->
+		<security:form-login login-page="/login" 
+			authentication-success-handler-ref="loginSuccessHandler" 
+			authentication-failure-handler-ref="loginFailureHandler" 
+			login-processing-url="/auth" 
+			username-parameter="id" 
+			password-parameter="pw" /> 
+		<!-- logout-url : 로그아웃 처리할 URL (security가 알아서 만들기 때문에, 이 경로로 요청만 하면됨) -->
+		<!-- invalidate-session : 로그아웃 시 세션 삭제여부 -->
+		<!-- logout-success-url : 로그아웃 성공 시 이동 URL -->
+		<!-- success-handler-ref : 로그아웃 성공 시 프로세스 정의, bean id 입력 -->
+		<security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/login?status=logout" /> 
+		
+		
+		<!-- invalid-session-url : invalid session(세션 타임아웃 등) 일 때 이동 URL -->
+		<!-- max-sessions : 최대 허용 가능한 세션 수 -->
+		<!-- expired-url : 중복 로그인 발생시 이동 URL (처음 접속한 세션이 invalidate가 되고 다음 요청시 invalid-session-url로 이동) -->
+		<!-- error-if-maximum-exceeded : max-sessions을 넘었을때 접속한 세션을 실패처리할지 여부 (expired-url와 얘중에 하나만 쓰면 될듯)  -->
+		<security:session-management invalid-session-url="/login"> 
+			<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false" /> 
+		</security:session-management> 
+	</security:http> 
+	<!-- secured method --> 
+	<security:global-method-security secured-annotations="enabled" /> 
+	
+	<!-- provider --> 
+	<security:authentication-manager> 
+		<security:authentication-provider ref="userAuthHelper" />
+	</security:authentication-manager> 
+	
+	<!-- default-target-url : 로그인 성공시 이동할 url -->
+	<!-- always-use-default-target : true - 무조건 default-target으로 감, 
+									 false - authentication-success-handler정보로 redirect -->
+	<bean id="loginSuccessHandler" class="com.devljh.domain.user.helper.LoginSuccessHandler"> 
+		<property name="defaultTargetUrl" value="/main" /> 
+		<property name="alwaysUseDefaultTargetUrl" value="true" /> 
+	</bean> 
+	
+	<!-- authentication-failure-url : 로그인 실패시 이동할 url  -->
+	<bean id="loginFailureHandler" class="com.devljh.domain.user.helper.LoginFailureHandler"> 
+		<property name="defaultFailureUrl" value="/login?status=fail" />
+	</bean> 
+	<!--  -->
+	<bean id="userAuthService" class="com.devljh.domain.user.UserAuthService" /> 
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" /> 
+	<bean id="userAuthProvider" class="com.devljh.domain.user.helper.UserAuthProvider"> 
+		<property name="userDetailsService" ref="userAuthService" /> 
+		<property name="passwordEncoder" ref="passwordEncoder" /> 
+	</bean>
+
+
+
+
+
+
+
+
+
+</beans>
+
+
